@@ -150,7 +150,9 @@ html {
     margin-top: 15rem;
 }
 
-
+.dex{
+    margin-top: 2rem;
+}
 
 body {
     font-family: var(--font-family);
