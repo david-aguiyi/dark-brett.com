@@ -1,0 +1,576 @@
+/* Reset and base styles  */
+
+* {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Links */
+
+a {
+    color: inherit;
+}
+
+a,
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Common */
+
+aside,
+nav,
+footer,
+header,
+section,
+main {
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+ul,
+ol,
+ul li,
+ol li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+img,
+svg {
+    max-width: 100%;
+    height: auto;
+}
+
+address {
+    font-style: normal;
+}
+
+/* Form */
+
+input,
+textarea,
+button,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button,
+input[type=submit] {
+    display: inline-block;
+    box-shadow: none;
+    background-color: transparent;
+    background: none;
+    cursor: pointer;
+}
+
+a:focus,
+input:focus,
+input:active,
+button:focus,
+button:active {
+    outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input[data-autocompleted] {
+    background-color: transparent !important;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+label {
+    cursor: pointer;
+}
+
+legend {
+    display: block;
+}
+
+@font-face {
+    font-family: "Toyz";
+    src: url("../fonts/TOYZ.ttf");
+}
+
+:root {
+    --font-family: "TOYZ", sans-serif;
+    --blue: #11119d;
+    --blue-light: #3434ac;
+    --red: #ff494f;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    color: #fff;
+    background-color: var(--blue);
+}
+
+.home {
+    display: flex;
+    background-color: var(--blue);
+    position: relative;
+}
+
+@media screen and (max-width: 1279px) {
+    .home {
+        flex-direction: column-reverse;
+        gap: 40px;
+        overflow: hidden;
+    }
+}
+
+.home::before {
+    content: url("../images/home_ellipse_blue.png");
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* .home::after {
+  content: url("../img/home/home_ellipse_red.png");
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+  translate: 0 22.5%;
+} */
+
+@media screen and (max-width: 1279px) {
+    .home::after {
+        display: none;
+    }
+}
+
+.home__img {
+    width: 50%;
+    padding-top: 20px;
+    padding-left: 170px;
+    position: relative;
+    z-index: 1;
+}
+
+@media screen and (max-width: 1279px) {
+    .home__img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .home__img {
+        padding-left: 0;
+    }
+}
+
+.home__text {
+    width: 50%;
+    padding-top: 107px;
+    position: relative;
+    z-index: 2;
+}
+
+@media screen and (max-width: 1279px) {
+    .home__text {
+        width: 100%;
+        padding-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.home__title {
+    max-width: 659px;
+    margin-bottom: 40px;
+    font-size: 156px;
+    line-height: 100%;
+    text-shadow: 8px 6px 0 #3434ac;
+}
+
+@media screen and (max-width: 767px) {
+    .home__title {
+        font-size: 72px;
+        text-align: center;
+    }
+}
+
+.home__description {
+    max-width: 659px;
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+
+@media screen and (max-width: 767px) {
+    .home__description {
+        font-size: 24px;
+        text-align: center;
+    }
+}
+
+.home__socials {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 24px;
+}
+
+.socials__link {
+    width: 89px;
+    height: 89px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #000;
+    background-color: var(--red);
+    transition: filter 250ms ease;
+}
+
+@media screen and (max-width: 767px) {
+    .socials__link {
+        width: 50px;
+        height: 50px;
+    }
+    .socials__link:hover svg {
+        scale: 0.6 !important;
+    }
+    .socials__link svg {
+        scale: 0.5;
+    }
+}
+
+.socials__link:hover {
+    filter: brightness(0.8);
+}
+
+.socials__link:hover svg {
+    transition: scale 250ms ease;
+    scale: 1.1;
+}
+
+.home__btn {
+    width: 432px;
+    height: 107px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #000;
+    background-color: var(--red);
+    font-size: 40px;
+    transition: filter 250ms ease;
+}
+
+@media screen and (max-width: 767px) {
+    .home__btn {
+        width: 360px;
+    }
+}
+
+.home__btn:hover {
+    filter: brightness(0.8);
+}
+
+.trumpnomics {
+    padding-top: 200px;
+    padding-bottom: 160px;
+    position: relative;
+    top: -88px;
+    background-color: var(--blue-light);
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+}
+
+@media screen and (max-width: 767px) {
+    .trumpnomics {
+        overflow: hidden;
+        top: -120px;
+        padding-bottom: 40px;
+    }
+}
+
+.trumpnomics::before {
+    content: url("../images/trumpnomics_ellipse.png");
+    position: absolute;
+    bottom: 210px;
+    left: 0;
+}
+
+.trumpnomics__top {
+    display: flex;
+    position: relative;
+    z-index: 2;
+}
+
+@media screen and (max-width: 1279px) {
+    .trumpnomics__top {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+.trumpnomics__text {
+    width: 50%;
+    padding-left: 195px;
+}
+
+@media screen and (max-width: 1279px) {
+    .trumpnomics__text {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .trumpnomics__text {
+        padding-left: 40px;
+    }
+}
+
+.trumpnomics__img {
+    width: 50%;
+}
+
+@media screen and (max-width: 1279px) {
+    .trumpnomics__img {
+        width: 100%;
+        display: flex;
+        justify-content: end;
+    }
+}
+
+.trumpnomics__title {
+    max-width: 494px;
+    margin-bottom: 74px;
+    font-size: 128px;
+}
+
+@media screen and (max-width: 767px) {
+    .trumpnomics__title {
+        font-size: 62px;
+    }
+}
+
+.trumpnomics__statistics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(289px, 1fr));
+    gap: 74px 101px;
+}
+
+@media screen and (max-width: 767px) {
+    .trumpnomics__statistics {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+.index__percent {
+    font-size: 156px;
+}
+
+@media screen and (max-width: 767px) {
+    .index__percent {
+        font-size: 72px;
+    }
+}
+
+.index__title {
+    font-size: 48px;
+}
+
+@media screen and (max-width: 767px) {
+    .index__title {
+        font-size: 32px;
+    }
+}
+
+.trumpnomics__bottom {
+    margin-top: 160px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 36px;
+}
+
+@media screen and (max-width: 1279px) {
+    .trumpnomics__bottom {
+        word-break: break-all;
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 20px;
+    }
+}
+
+.goals {
+    padding-top: 106px;
+    padding-bottom: 106px;
+    background-color: var(--blue);
+    position: relative;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 767px) {
+    .goals {
+        padding-top: 0;
+        padding-bottom: 40px;
+    }
+}
+
+.goals:before {
+    content: url("../images/goals_ellipse_blue.png");
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+}
+
+.goals:after {
+    content: url("../images/goals_ellipse_red.png");
+    position: absolute;
+    bottom: -4px;
+    right: 0;
+}
+
+.goals__top {
+    display: flex;
+    position: relative;
+    z-index: 2;
+}
+
+@media screen and (max-width: 1279px) {
+    .goals__top {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+.goals__text {
+    width: 60%;
+    padding-left: 195px;
+}
+
+@media screen and (max-width: 1279px) {
+    .goals__text {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .goals__text {
+        padding-left: 20px;
+    }
+}
+
+.goals__img {
+    width: 40%;
+    padding-right: 60px;
+}
+
+@media screen and (max-width: 1279px) {
+    .goals__img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.goals__title {
+    max-width: 390px;
+    margin-bottom: 61px;
+    font-size: 100px;
+}
+
+@media screen and (max-width: 767px) {
+    .goals__title {
+        font-size: 62px;
+    }
+}
+
+.goals__steps {
+    display: flex;
+    flex-direction: column;
+    gap: 41px;
+    font-size: 48px;
+}
+
+@media screen and (max-width: 767px) {
+    .goals__steps {
+        font-size: 32px;
+    }
+}
+
+.goals__steps li {
+    display: flex;
+}
+
+.step__num {
+    margin-right: 48px;
+    font-size: 117px;
+    font-size: 64px;
+}
+
+@media screen and (max-width: 767px) {
+    .step__num {
+        margin-right: 24px;
+        font-size: 48px;
+    }
+}
+
+.goals__bottom {
+    margin-top: 195px;
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+}
+
+@media screen and (max-width: 767px) {
+    .goals__bottom {
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+    }
+}
+
+/*# sourceMappingURL=styles.css.map */
