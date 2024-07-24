@@ -133,7 +133,7 @@ legend {
 }
 
 :root {
-    --font-family: "TOYZ", sans-serif;
+    --font-family: "Toyz", sans-serif;
     --blue: #11119d;
     --blue-light: #3434ac;
     --red: #ff494f;
@@ -142,6 +142,15 @@ legend {
 html {
     scroll-behavior: smooth;
 }
+
+
+.img-kam{
+        max-width: 100%;
+    height: auto;
+    margin-top: 15rem;
+}
+
+
 
 body {
     font-family: var(--font-family);
